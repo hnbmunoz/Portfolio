@@ -1,0 +1,221 @@
+// ==========================================================================
+// Experience Component Styles
+// ==========================================================================
+
+// Import abstracts for variables and mixins
+@use '../../styles/abstracts/variables' as *;
+@use '../../styles/abstracts/mixins' as *;
+
+// Experience section
+.experience {
+  padding: $spacing-16 0;
+  background: var(--bg-secondary);
+  
+  &__container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-6;
+  }
+  
+  &__title {
+    @include font-size($font-size-3xl, $line-height-tight);
+    font-weight: $font-weight-bold;
+    text-align: center;
+    margin-bottom: $spacing-12;
+    color: var(--text-primary);
+  }
+  
+  &__timeline {
+    position: relative;
+  }
+  
+  &__item {
+    display: flex;
+    gap: $spacing-6;
+    margin-bottom: $spacing-12;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  
+  &__marker {
+    position: relative;
+    flex-shrink: 0;
+    
+    &-dot {
+      width: 16px;
+      height: 16px;
+      background: var(--color-accent);
+      border-radius: 50%;
+      border: 4px solid var(--bg-secondary);
+      box-shadow: 0 0 0 4px var(--color-accent);
+    }
+    
+    &-line {
+      position: absolute;
+      left: 50%;
+      top: 20px;
+      width: 2px;
+      height: calc(100% + 32px);
+      background: var(--border-primary);
+      transform: translateX(-50%);
+    }
+  }
+  
+  &__content {
+    flex: 1;
+    background: var(--bg-primary);
+    padding: $spacing-6;
+    border-radius: $border-radius-lg;
+    border: 1px solid var(--border-primary);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    
+    // Add left accent border
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      bottom: 0;
+      width: 4px;
+      background: linear-gradient(180deg, var(--color-primary), var(--color-accent));
+      opacity: 0.8;
+    }
+    
+    // Add subtle background pattern
+    &::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle, rgba(var(--color-accent-rgb), 0.03) 1px, transparent 1px);
+      background-size: 20px 20px;
+      opacity: 0.5;
+      pointer-events: none;
+    }
+    
+    &:hover {
+      transform: translateX(4px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      
+      &::before {
+        opacity: 1;
+        width: 5px;
+      }
+    }
+  }
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: $spacing-3;
+    gap: $spacing-4;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      gap: $spacing-2;
+    }
+  }
+  
+  &__position {
+    @include font-size($font-size-xl, $line-height-tight);
+    font-weight: $font-weight-semibold;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  &__type-badge {
+    padding: $spacing-1 $spacing-3;
+    background: rgba(var(--color-primary-rgb), 0.1);
+    color: var(--color-primary);
+    border-radius: $border-radius-full;
+    @include font-size($font-size-xs, $line-height-tight);
+    font-weight: $font-weight-medium;
+    white-space: nowrap;
+  }
+  
+  &__company {
+    display: flex;
+    align-items: center;
+    gap: $spacing-3;
+    margin-bottom: $spacing-2;
+    
+    @media (max-width: 768px) {
+      flex-direction: column;
+      align-items: flex-start;
+      gap: $spacing-1;
+    }
+    
+    &-name {
+      @include font-size($font-size-lg, $line-height-normal);
+      font-weight: $font-weight-medium;
+      color: var(--color-primary);
+    }
+  }
+  
+  &__location {
+    @include font-size($font-size-base, $line-height-normal);
+    color: var(--text-tertiary);
+  }
+  
+  &__duration {
+    @include font-size($font-size-base, $line-height-normal);
+    color: var(--text-secondary);
+    margin-bottom: $spacing-4;
+    font-weight: $font-weight-medium;
+  }
+  
+  &__responsibilities {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 $spacing-4 0;
+  }
+  
+  &__responsibility {
+    position: relative;
+    padding-left: $spacing-4;
+    margin-bottom: $spacing-2;
+    @include font-size($font-size-base, $line-height-relaxed);
+    color: var(--text-secondary);
+    
+    &::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--color-accent);
+      font-weight: $font-weight-bold;
+    }
+  }
+  
+  &__technologies {
+    margin-top: $spacing-4;
+  }
+  
+  &__tech-title {
+    @include font-size($font-size-sm, $line-height-normal);
+    font-weight: $font-weight-semibold;
+    color: var(--text-primary);
+    margin-bottom: $spacing-2;
+  }
+  
+  &__tech-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: $spacing-2;
+  }
+  
+  &__tech-tag {
+    padding: $spacing-1 $spacing-2;
+    background: rgba(var(--color-primary-rgb), 0.1);
+    color: var(--color-primary);
+    border-radius: $border-radius-sm;
+    @include font-size($font-size-xs, $line-height-tight);
+    font-weight: $font-weight-medium;
+  }
+}

@@ -34,7 +34,7 @@ function App() {
       <footer className="app__footer">
         <div className="app__footer-content">
           <p className="app__footer-text">
-            © 2024 {portfolioData.personalInfo.name}. Built with React, TypeScript, and SCSS.
+            © 2025 {portfolioData.personalInfo.name}. Built with React, TypeScript, and SCSS.
           </p>
         </div>
       </footer>

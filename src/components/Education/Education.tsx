@@ -1,33 +1,30 @@
 import React from 'react';
-import type { Education } from '../types';
+import type { Education } from '../../types';
+import './Education.scss';
 
 interface EducationProps {
   education: Education[];
 }
 
-const Education: React.FC<EducationProps> = ({ education }) => {
+const EducationComponent: React.FC<EducationProps> = ({ education }) => {
   return (
     <section id="education" className="education">
       <div className="education__container">
-        <h2 className="education__title scroll-reveal">Education</h2>
+        <h2 className="education__title">Education</h2>
         
         <div className="education__list">
           {education.map((edu, index) => (
-            <div key={edu.id} className="education__item scroll-reveal hover-lift" style={{ animationDelay: `${index * 0.2}s` }}>
+            <div key={index} className="education__item">
               <div className="education__content">
                 <h3 className="education__degree">{edu.degree}</h3>
-                {edu.field && (
-                  <p className="education__field">{edu.field}</p>
-                )}
+                <p className="education__field">{edu.field}</p>
                 <div className="education__institution">
                   <span className="education__institution-name">{edu.institution}</span>
-                  {edu.location && (
-                    <span className="education__location">📍 {edu.location}</span>
-                  )}
+                  <span className="education__location">{edu.location}</span>
                 </div>
-                <div className="education__year">{edu.year}</div>
+                <p className="education__year">{edu.year}</p>
               </div>
-              <div className="education__icon animate-float">
+              <div className="education__icon">
                 🎓
               </div>
             </div>
@@ -38,4 +35,4 @@ const Education: React.FC<EducationProps> = ({ education }) => {
   );
 };
 
-export default Education;
+export default EducationComponent;

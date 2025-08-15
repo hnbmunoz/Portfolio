@@ -1,5 +1,6 @@
 import React from 'react';
-import { PersonalInfo } from '../types';
+import { PersonalInfo } from '../../types';
+import './Hero.scss';
 
 interface HeroProps {
   personalInfo: PersonalInfo;

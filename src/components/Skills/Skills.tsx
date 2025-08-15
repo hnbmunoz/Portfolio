@@ -1,5 +1,6 @@
 import React from 'react';
-import { Skill } from '../types';
+import { Skill } from '../../types';
+import './Skills.scss';
 
 interface SkillsProps {
   skills: Skill[];

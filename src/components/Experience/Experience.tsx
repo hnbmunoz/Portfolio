@@ -1,11 +1,12 @@
 import React from 'react';
-import type { Experience } from '../types';
+import type { Experience } from '../../types';
+import './Experience.scss';
 
 interface ExperienceProps {
   experience: Experience[];
 }
 
-const Experience: React.FC<ExperienceProps> = ({ experience }) => {
+const ExperienceComponent: React.FC<ExperienceProps> = ({ experience }) => {
   return (
     <section id="experience" className="experience">
       <div className="experience__container">
@@ -67,4 +68,4 @@ const Experience: React.FC<ExperienceProps> = ({ experience }) => {
   );
 };
 
-export default Experience;
+export default ExperienceComponent;

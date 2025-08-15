@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../ThemeToggle';
+import './Navigation.scss';
 
 const Navigation: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

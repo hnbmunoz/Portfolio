@@ -15,29 +15,57 @@ A modern, responsive portfolio website built with React, TypeScript, and SCSS. F
 
 ## 🛠️ Tech Stack
 
-- **Frontend**: React 19, TypeScript
-- **Build Tool**: Vite
-- **Styling**: SCSS with organized architecture
-- **State Management**: Zustand
+- **Frontend**: React 19.1.1, TypeScript 5.9.2
+- **Build Tool**: Vite 6.3.5
+- **Styling**: SCSS/Sass 1.90.0 with organized architecture
+- **State Management**: Zustand 5.0.7
 - **Development**: Hot Module Replacement (HMR)
 - **Linting**: ESLint with TypeScript support
+- **Deployment**: GitHub Actions with GitHub Pages
 
 ## 📁 Project Structure
 
 ```
 portfolio/
-├── public/
-│   └── vite.svg
+├── .github/
+│   └── workflows/
+│       └── deploy.yml      # GitHub Actions deployment
+├── Reference/              # Reference documents
+│   └── RESUME_MUÑOZ, HENRI NICHOLLI (1).pdf
 ├── src/
-│   ├── components/          # React components
-│   │   ├── Contact.tsx
-│   │   ├── Education.tsx
-│   │   ├── Experience.tsx
-│   │   ├── Header.tsx
-│   │   ├── Hero.tsx
-│   │   ├── Navigation.tsx
-│   │   ├── Skills.tsx
-│   │   └── ThemeToggle.tsx
+│   ├── assets/             # Static assets
+│   │   └── .gitkeep
+│   ├── components/         # React components (organized by feature)
+│   │   ├── Contact/
+│   │   │   ├── Contact.tsx
+│   │   │   ├── Contact.scss
+│   │   │   └── index.ts
+│   │   ├── Education/
+│   │   │   ├── Education.tsx
+│   │   │   ├── Education.scss
+│   │   │   └── index.ts
+│   │   ├── Experience/
+│   │   │   ├── Experience.tsx
+│   │   │   ├── Experience.scss
+│   │   │   └── index.ts
+│   │   ├── Header/
+│   │   │   ├── Header.tsx
+│   │   │   └── index.ts
+│   │   ├── Hero/
+│   │   │   ├── Hero.tsx
+│   │   │   ├── Hero.scss
+│   │   │   └── index.ts
+│   │   ├── Navigation/
+│   │   │   ├── Navigation.tsx
+│   │   │   ├── Navigation.scss
+│   │   │   └── index.ts
+│   │   ├── Skills/
+│   │   │   ├── Skills.tsx
+│   │   │   ├── Skills.scss
+│   │   │   └── index.ts
+│   │   └── ThemeToggle/
+│   │       ├── ThemeToggle.tsx
+│   │       └── index.ts
 │   ├── data/               # Static data files
 │   │   ├── education.ts
 │   │   ├── experience.ts
@@ -52,27 +80,51 @@ portfolio/
 │   ├── stores/             # State management
 │   │   └── themeStore.ts
 │   ├── styles/             # SCSS stylesheets
-│   │   ├── abstracts/      # Variables, mixins
-│   │   ├── base/           # Reset, typography
-│   │   ├── components/     # Component styles
-│   │   ├── layout/         # Layout styles
+│   │   ├── abstracts/      # Variables, mixins, functions
+│   │   │   ├── _mixins.scss
+│   │   │   └── _variables.scss
+│   │   ├── base/           # Reset, typography, base styles
+│   │   │   ├── _reset.scss
+│   │   │   └── _typography.scss
+│   │   ├── components/     # Component-specific styles
+│   │   │   ├── _buttons.scss
+│   │   │   ├── _cards.scss
+│   │   │   ├── _forms.scss
+│   │   │   └── _navigation.scss
+│   │   ├── layout/         # Layout-specific styles
+│   │   │   ├── _footer.scss
+│   │   │   ├── _grid.scss
+│   │   │   └── _header.scss
 │   │   ├── pages/          # Page-specific styles
+│   │   │   └── _home.scss
 │   │   ├── themes/         # Theme definitions
+│   │   │   ├── _dark.scss
+│   │   │   └── _light.scss
 │   │   ├── utilities/      # Utility classes
-│   │   ├── animations.scss
-│   │   └── main.scss
+│   │   │   ├── _colors.scss
+│   │   │   ├── _display.scss
+│   │   │   ├── _flexbox.scss
+│   │   │   └── _spacing.scss
+│   │   ├── animations.scss # Animation definitions
+│   │   └── main.scss       # Main stylesheet entry point
 │   ├── types/              # TypeScript type definitions
 │   │   └── index.ts
 │   ├── utils/              # Utility functions
 │   │   ├── index.ts
 │   │   └── theme.ts
-│   ├── App.tsx
-│   ├── App.scss
-│   └── main.tsx
-├── package.json
-├── tsconfig.json
-├── vite.config.ts
-└── README.md
+│   ├── App.tsx             # Main App component
+│   ├── App.scss            # App-specific styles
+│   ├── App.css             # Legacy CSS (if needed)
+│   ├── index.css           # Global styles
+│   └── main.tsx            # Application entry point
+├── .gitignore              # Git ignore rules
+├── index.html              # HTML template
+├── package.json            # Dependencies and scripts
+├── package-lock.json       # Dependency lock file
+├── tsconfig.json           # TypeScript configuration
+├── tsconfig.node.json      # TypeScript Node configuration
+├── vite.config.ts          # Vite configuration
+└── README.md               # Project documentation
 ```
 
 ## 🚀 Getting Started
@@ -105,9 +157,9 @@ The application will open automatically in your browser at `http://localhost:517
 ## 📜 Available Scripts
 
 - `npm run dev` - Start development server with auto-open
-- `npm run build` - Build for production
+- `npm run build` - Clean dist folder, compile TypeScript, and build for production
 - `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
+- `npm run lint` - Run ESLint with TypeScript support
 
 ## 🎨 Customization
 
@@ -171,7 +223,18 @@ Customize themes in:
 
 ## 🚀 Deployment
 
-### Build for Production
+### Automatic Deployment (GitHub Pages)
+
+This project is configured for automatic deployment to GitHub Pages using GitHub Actions. The deployment workflow:
+
+1. **Triggers**: Automatically deploys on push to `main` branch
+2. **Build Process**: Runs `npm ci` and `npm run build`
+3. **Deployment**: Deploys the `dist` folder to GitHub Pages
+4. **URL**: Available at your GitHub Pages URL
+
+The deployment configuration is in [`.github/workflows/deploy.yml`](.github/workflows/deploy.yml).
+
+### Manual Build for Production
 
 ```bash
 npm run build
@@ -179,7 +242,9 @@ npm run build
 
 The build files will be generated in the `dist` directory.
 
-### Deploy to Vercel
+### Alternative Deployment Options
+
+#### Deploy to Vercel
 
 1. Install Vercel CLI:
 ```bash
@@ -191,7 +256,7 @@ npm i -g vercel
 vercel
 ```
 
-### Deploy to Netlify
+#### Deploy to Netlify
 
 1. Build the project:
 ```bash
