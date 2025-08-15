@@ -1,0 +1,16 @@
+// ==========================================================================
+// Footer Layout
+// ==========================================================================
+
+.footer {
+  margin-top: auto;
+  background-color: var(--bg-secondary);
+  border-top: 1px solid var(--border-primary);
+  padding: $spacing-8 0;
+  
+  &__container {
+    @include container;
+    text-align: center;
+    color: var(--text-secondary);
+  }
+}

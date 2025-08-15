@@ -1,0 +1,12 @@
+// ==========================================================================
+// Header Layout
+// ==========================================================================
+
+.header {
+  position: sticky;
+  top: 0;
+  z-index: $z-index-sticky;
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--nav-border);
+}

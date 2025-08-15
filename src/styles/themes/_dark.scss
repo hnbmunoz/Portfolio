@@ -1,0 +1,124 @@
+// ==========================================================================
+// Dark Theme
+// ==========================================================================
+
+[data-theme="dark"] {
+  // Background Colors - True Dark Theme
+  --bg-primary: #121212;              // True dark background
+  --bg-secondary: #1E1E1E;            // Elevated surfaces (cards, panels)
+  --bg-tertiary: #2A2A2A;             // Even more elevated surfaces
+  --bg-elevated: #1E1E1E;             // Elevated elements
+  --bg-overlay: rgba(0, 0, 0, 0.8);
+
+  // Text Colors - Optimized for dark theme
+  --text-primary: #E0E0E0;            // Soft white for main text
+  --text-secondary: #A0A0A0;          // Muted for descriptions, timestamps
+  --text-tertiary: #808080;
+  --text-inverse: #121212;            // Dark text for light backgrounds
+  --text-muted: #606060;
+
+  // Border Colors & Dividers
+  --border-primary: #2C2C2C;          // Subtle contrast for separating content
+  --border-secondary: #404040;
+  --border-focus: #4A90E2;            // Cool deep blue
+
+  // Brand Colors - Dark Theme Optimized
+  --color-primary: #4A90E2;           // Cool deep blue (Primary Accent)
+  --color-primary-hover: #5BA0F2;     // Lighter blue on hover
+  --color-primary-light: #E8F2FF;
+  --color-primary-dark: #3A80D2;
+
+  // Secondary Brand (Modern Teal)
+  --color-secondary: #00BFA5;         // Modern & fresh teal
+  --color-secondary-hover: #00D4AA;   // Lighter teal on hover
+  --color-secondary-light: #E0FFF9;
+  --color-secondary-dark: #00A693;
+
+  // Accent Color (Warm Amber for CTAs)
+  --color-accent: #FFC857;            // Warm amber for highlights/CTAs
+  --color-accent-hover: #FFD700;      // Brighter amber on hover
+  --color-accent-light: #FFF7E1;
+  --color-accent-dark: #E6B547;
+  --color-accent-rgb: 255, 200, 87;   // RGB values for accent color
+
+  // States & Feedback Colors
+  --color-success: #4CAF50;           // Success state
+  --color-warning: #FFC107;           // Warning state
+  --color-error: #F44336;             // Error state
+  --color-info: #00BFA5;              // Using modern teal for info
+
+  // Success variants
+  --color-success-light: #1B5E20;
+  --color-success-dark: #C8E6C9;
+
+  // Warning variants
+  --color-warning-light: #E65100;
+  --color-warning-dark: #FFF3E0;
+
+  // Error variants
+  --color-error-light: #B71C1C;
+  --color-error-dark: #FFCDD2;
+
+  // Info variants (Modern Teal)
+  --color-info-light: #004D40;
+  --color-info-dark: #B2DFDB;
+
+  // Interactive States
+  --color-hover: rgba(255, 255, 255, 0.08);
+  --color-active: rgba(255, 255, 255, 0.12);
+  --color-focus: #4A90E2;
+  --color-disabled: #404040;
+
+  // Shadows - Enhanced for dark theme
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.6);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.7), 0 1px 2px -1px rgba(0, 0, 0, 0.7);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.7), 0 2px 4px -2px rgba(0, 0, 0, 0.7);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.7), 0 4px 6px -4px rgba(0, 0, 0, 0.7);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.7), 0 8px 10px -6px rgba(0, 0, 0, 0.7);
+
+  // Navigation
+  --nav-bg: rgba(18, 18, 18, 0.95);   // True dark with transparency
+  --nav-border: #2C2C2C;              // Subtle divider
+  --nav-text: #E0E0E0;                // Soft white
+  --nav-text-hover: #FFC857;          // Warm amber on hover
+
+  // Cards
+  --card-bg: #1E1E1E;                 // Elevated surface
+  --card-border: #2C2C2C;             // Subtle divider
+  --card-shadow: var(--shadow-md);
+
+  // Forms
+  --input-bg: #1E1E1E;                // Elevated surface
+  --input-border: #2C2C2C;            // Subtle divider
+  --input-border-focus: #4A90E2;      // Cool deep blue
+  --input-text: #E0E0E0;              // Soft white
+  --input-placeholder: #A0A0A0;       // Muted gray
+
+  // Code
+  --code-bg: #1E1E1E;                 // Elevated surface
+  --code-text: #E0E0E0;               // Soft white
+  --code-border: #2C2C2C;             // Subtle divider
+}
+
+// Dark theme specific adjustments
+[data-theme="dark"] {
+  color-scheme: dark;
+  
+  // Scrollbar styling for dark theme
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: var(--border-secondary);
+    border-radius: 4px;
+    
+    &:hover {
+      background: var(--text-tertiary);
+    }
+  }
+}

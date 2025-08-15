@@ -1,0 +1,35 @@
+// ==========================================================================
+// Main SCSS Entry Point
+// ==========================================================================
+
+// Abstracts - Variables, mixins, functions (no CSS output)
+@import 'abstracts/variables';
+@import 'abstracts/mixins';
+
+// Base - Reset, typography, and base styles
+@import 'base/reset';
+@import 'base/typography';
+
+// Themes - Light and dark theme variables
+@import 'themes/light';
+@import 'themes/dark';
+
+// Components - Reusable component styles
+@import 'components/buttons';
+@import 'components/cards';
+@import 'components/forms';
+@import 'components/navigation';
+
+// Layout - Layout-specific styles
+@import 'layout/header';
+@import 'layout/footer';
+@import 'layout/grid';
+
+// Pages - Page-specific styles
+@import 'pages/home';
+
+// Utilities - Utility classes
+@import 'utilities/spacing';
+@import 'utilities/display';
+@import 'utilities/flexbox';
+@import 'utilities/colors';

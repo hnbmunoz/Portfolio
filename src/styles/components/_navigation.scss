@@ -1,0 +1,47 @@
+// ==========================================================================
+// Navigation
+// ==========================================================================
+
+.nav {
+  background-color: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  backdrop-filter: blur(10px);
+  
+  &__container {
+    @include container;
+    @include flex-between;
+    padding-top: $spacing-4;
+    padding-bottom: $spacing-4;
+  }
+  
+  &__brand {
+    font-weight: $font-weight-bold;
+    font-size: $font-size-lg;
+    color: var(--nav-text);
+    text-decoration: none;
+    
+    &:hover {
+      color: var(--nav-text-hover);
+    }
+  }
+  
+  &__menu {
+    @include flex-center;
+    gap: $spacing-6;
+  }
+  
+  &__link {
+    color: var(--nav-text);
+    text-decoration: none;
+    font-weight: $font-weight-medium;
+    transition: color 0.2s ease;
+    
+    &:hover {
+      color: var(--nav-text-hover);
+    }
+    
+    &--active {
+      color: var(--nav-text-hover);
+    }
+  }
+}

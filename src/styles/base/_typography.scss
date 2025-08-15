@@ -1,0 +1,353 @@
+// ==========================================================================
+// Typography
+// ==========================================================================
+
+// Import Google Fonts
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap');
+
+// Base Typography
+// ==========================================================================
+
+html {
+  font-size: 16px; // Base font size
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  @include body-text;
+  background-color: var(--bg-primary);
+  color: var(--text-primary);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+// Headings
+// ==========================================================================
+
+h1, h2, h3, h4, h5, h6 {
+  @include heading-base;
+  margin: 0 0 $spacing-4 0;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+h1, .h1 {
+  @include font-size($font-size-4xl, $line-height-tight);
+  font-weight: $font-weight-extrabold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-5xl, $line-height-tight);
+  }
+  
+  @include respond-to(lg) {
+    @include font-size($font-size-6xl, $line-height-tight);
+  }
+}
+
+h2, .h2 {
+  @include font-size($font-size-3xl, $line-height-tight);
+  font-weight: $font-weight-bold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-4xl, $line-height-tight);
+  }
+}
+
+h3, .h3 {
+  @include font-size($font-size-2xl, $line-height-snug);
+  font-weight: $font-weight-bold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-3xl, $line-height-snug);
+  }
+}
+
+h4, .h4 {
+  @include font-size($font-size-xl, $line-height-snug);
+  font-weight: $font-weight-semibold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-2xl, $line-height-snug);
+  }
+}
+
+h5, .h5 {
+  @include font-size($font-size-lg, $line-height-normal);
+  font-weight: $font-weight-semibold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-xl, $line-height-normal);
+  }
+}
+
+h6, .h6 {
+  @include font-size($font-size-base, $line-height-normal);
+  font-weight: $font-weight-semibold;
+  
+  @include respond-to(md) {
+    @include font-size($font-size-lg, $line-height-normal);
+  }
+}
+
+// Body Text
+// ==========================================================================
+
+p, .p {
+  margin: 0 0 $spacing-4 0;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.lead {
+  @include font-size($font-size-lg, $line-height-relaxed);
+  font-weight: $font-weight-regular;
+  color: var(--text-secondary);
+  
+  @include respond-to(md) {
+    @include font-size($font-size-xl, $line-height-relaxed);
+  }
+}
+
+.text-large {
+  @include font-size($font-size-lg, $line-height-normal);
+}
+
+.text-small {
+  @include font-size($font-size-sm, $line-height-normal);
+}
+
+.text-xs {
+  @include font-size($font-size-xs, $line-height-normal);
+}
+
+// Text Colors
+// ==========================================================================
+
+.text-primary {
+  color: var(--text-primary);
+}
+
+.text-secondary {
+  color: var(--text-secondary);
+}
+
+.text-tertiary {
+  color: var(--text-tertiary);
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.text-inverse {
+  color: var(--text-inverse);
+}
+
+.text-brand {
+  color: var(--color-primary);
+}
+
+.text-success {
+  color: var(--color-success);
+}
+
+.text-warning {
+  color: var(--color-warning);
+}
+
+.text-error {
+  color: var(--color-error);
+}
+
+.text-info {
+  color: var(--color-info);
+}
+
+// Font Weights
+// ==========================================================================
+
+.font-light {
+  font-weight: $font-weight-light;
+}
+
+.font-regular {
+  font-weight: $font-weight-regular;
+}
+
+.font-medium {
+  font-weight: $font-weight-medium;
+}
+
+.font-semibold {
+  font-weight: $font-weight-semibold;
+}
+
+.font-bold {
+  font-weight: $font-weight-bold;
+}
+
+.font-extrabold {
+  font-weight: $font-weight-extrabold;
+}
+
+// Font Families
+// ==========================================================================
+
+.font-primary {
+  font-family: $font-primary;
+}
+
+.font-secondary {
+  font-family: $font-secondary;
+}
+
+.font-mono {
+  font-family: $font-mono;
+}
+
+// Text Alignment
+// ==========================================================================
+
+.text-left {
+  text-align: left;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-justify {
+  text-align: justify;
+}
+
+// Text Utilities
+// ==========================================================================
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-lowercase {
+  text-transform: lowercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-underline {
+  text-decoration: underline;
+}
+
+.text-no-underline {
+  text-decoration: none;
+}
+
+.text-truncate {
+  @include text-truncate;
+}
+
+.text-clamp-2 {
+  @include text-clamp(2);
+}
+
+.text-clamp-3 {
+  @include text-clamp(3);
+}
+
+// Links
+// ==========================================================================
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+  
+  &:hover {
+    color: var(--color-primary-hover);
+    text-decoration: underline;
+  }
+  
+  &:focus-visible {
+    @include focus-ring;
+  }
+}
+
+// Code
+// ==========================================================================
+
+code {
+  font-family: $font-mono;
+  font-size: 0.875em;
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  padding: 0.125rem 0.25rem;
+  border-radius: $border-radius-sm;
+  border: 1px solid var(--code-border);
+}
+
+pre {
+  font-family: $font-mono;
+  background-color: var(--code-bg);
+  color: var(--code-text);
+  padding: $spacing-4;
+  border-radius: $border-radius-md;
+  border: 1px solid var(--code-border);
+  overflow-x: auto;
+  margin: $spacing-4 0;
+  
+  code {
+    background: none;
+    border: none;
+    padding: 0;
+  }
+}
+
+// Lists
+// ==========================================================================
+
+ul, ol {
+  margin: 0 0 $spacing-4 0;
+  padding-left: $spacing-6;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+li {
+  margin-bottom: $spacing-1;
+  
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+// Blockquotes
+// ==========================================================================
+
+blockquote {
+  margin: $spacing-6 0;
+  padding: $spacing-4 $spacing-6;
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--bg-secondary);
+  font-style: italic;
+  
+  p {
+    margin-bottom: $spacing-2;
+    
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

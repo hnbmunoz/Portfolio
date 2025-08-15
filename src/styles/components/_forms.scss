@@ -1,0 +1,46 @@
+// ==========================================================================
+// Forms
+// ==========================================================================
+
+.form {
+  &__group {
+    margin-bottom: $spacing-4;
+  }
+  
+  &__label {
+    display: block;
+    font-weight: $font-weight-medium;
+    color: var(--text-primary);
+    margin-bottom: $spacing-2;
+  }
+  
+  &__input {
+    width: 100%;
+    padding: $spacing-3 $spacing-4;
+    background-color: var(--input-bg);
+    border: 1px solid var(--input-border);
+    border-radius: $border-radius-md;
+    color: var(--input-text);
+    transition: border-color 0.2s ease;
+    
+    &:focus {
+      border-color: var(--input-border-focus);
+      @include focus-ring;
+    }
+    
+    &::placeholder {
+      color: var(--input-placeholder);
+    }
+  }
+  
+  &__textarea {
+    @extend .form__input;
+    resize: vertical;
+    min-height: 100px;
+  }
+  
+  &__select {
+    @extend .form__input;
+    cursor: pointer;
+  }
+}

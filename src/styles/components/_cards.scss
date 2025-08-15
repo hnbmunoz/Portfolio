@@ -1,0 +1,142 @@
+// ==========================================================================
+// Cards
+// ==========================================================================
+
+.card {
+  @include card-base;
+  padding: $spacing-6;
+  position: relative;
+  overflow: hidden;
+  
+  // Add subtle accent border
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--color-primary), var(--color-accent));
+    opacity: 0.8;
+  }
+  
+  &--hover {
+    @include card-hover;
+    
+    &:hover::before {
+      opacity: 1;
+      height: 4px;
+    }
+  }
+  
+  &--compact {
+    padding: $spacing-4;
+  }
+  
+  &--spacious {
+    padding: $spacing-8;
+  }
+  
+  // Accent variations
+  &--primary-accent::before {
+    background: linear-gradient(90deg, var(--color-primary), var(--color-primary-hover));
+  }
+  
+  &--secondary-accent::before {
+    background: linear-gradient(90deg, var(--color-secondary), var(--color-accent));
+  }
+  
+  &--accent-only::before {
+    background: var(--color-accent);
+  }
+  
+  &__header {
+    margin-bottom: $spacing-4;
+    padding-bottom: $spacing-4;
+    border-bottom: 1px solid var(--border-primary);
+    position: relative;
+    
+    // Add subtle accent line
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: -1px;
+      left: 0;
+      width: 60px;
+      height: 2px;
+      background: var(--color-accent);
+      opacity: 0.6;
+    }
+  }
+  
+  &__title {
+    @include font-size($font-size-xl, $line-height-snug);
+    font-weight: $font-weight-semibold;
+    color: var(--text-primary);
+    margin: 0;
+  }
+  
+  &__subtitle {
+    @include font-size($font-size-sm, $line-height-normal);
+    color: var(--text-secondary);
+    margin: $spacing-1 0 0 0;
+  }
+  
+  &__body {
+    color: var(--text-secondary);
+    line-height: $line-height-relaxed;
+  }
+  
+  &__footer {
+    margin-top: $spacing-4;
+    padding-top: $spacing-4;
+    border-top: 1px solid var(--border-primary);
+    @include flex-between;
+  }
+}
+
+// Enhanced card mixins
+@mixin card-accent($color: var(--color-primary), $position: 'top') {
+  position: relative;
+  
+  &::before {
+    content: '';
+    position: absolute;
+    background: $color;
+    
+    @if $position == 'top' {
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 3px;
+    } @else if $position == 'left' {
+      top: 0;
+      left: 0;
+      bottom: 0;
+      width: 3px;
+    } @else if $position == 'corner' {
+      top: 0;
+      right: 0;
+      width: 0;
+      height: 0;
+      border-style: solid;
+      border-width: 0 20px 20px 0;
+      border-color: transparent $color transparent transparent;
+    }
+  }
+}
+
+@mixin card-glow($color: var(--color-accent)) {
+  box-shadow:
+    0 1px 3px 0 rgb(0 0 0 / 0.1),
+    0 1px 2px -1px rgb(0 0 0 / 0.1),
+    0 0 0 1px rgba($color, 0.1);
+    
+  &:hover {
+    box-shadow:
+      0 10px 15px -3px rgb(0 0 0 / 0.1),
+      0 4px 6px -4px rgb(0 0 0 / 0.1),
+      0 0 0 1px rgba($color, 0.2),
+      0 0 20px rgba($color, 0.1);
+  }
+}

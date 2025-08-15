@@ -1,0 +1,102 @@
+// ==========================================================================
+// Light Theme
+// ==========================================================================
+
+:root,
+[data-theme="light"] {
+  // Background Colors - Light Theme
+  --bg-primary: #{$neutral-50};       // Soft Off-White #F5F5F5
+  --bg-secondary: #{$neutral-100};    // Light Gray #E0E0E0
+  --bg-tertiary: #{$neutral-200};
+  --bg-elevated: white;               // Pure white for elevated elements
+  --bg-overlay: rgba(0, 0, 0, 0.5);
+
+  // Text Colors - Dark on Light
+  --text-primary: #{$neutral-900};    // Graphite #1E1E1E
+  --text-secondary: #{$neutral-700};  // Dark Gray #404040
+  --text-tertiary: #{$neutral-600};
+  --text-inverse: #{$neutral-50};     // Light text for dark backgrounds
+  --text-muted: #{$neutral-500};
+
+  // Border Colors
+  --border-primary: #{$neutral-300};
+  --border-secondary: #{$neutral-200};
+  --border-focus: #{$primary-500};    // Deep Blue
+
+  // Brand Colors
+  --color-primary: #{$primary-500};        // Deep Blue #1B4F72
+  --color-primary-hover: #{$primary-600};  // Darker Blue #0E4D92
+  --color-primary-light: #{$primary-100};
+  --color-primary-dark: #{$primary-700};
+
+  // Secondary Brand (Teal/Aqua)
+  --color-secondary: #{$secondary-600};      // Teal #17A2B8
+  --color-secondary-hover: #{$secondary-700};
+  --color-secondary-light: #{$secondary-100};
+  --color-secondary-dark: #{$secondary-800};
+
+  // Accent Color (Reverted to Primary)
+  --color-accent: #{$primary-500};        // Deep Blue #1B4F72
+  --color-accent-hover: #{$primary-600};  // Darker Blue #0E4D92
+  --color-accent-light: #{$primary-100};
+  --color-accent-dark: #{$primary-700};
+  --color-accent-rgb: 27, 79, 114;        // RGB values for primary color
+
+  // Semantic Colors
+  --color-success: #{$success};
+  --color-warning: #{$warning};       // Using standard warning color
+  --color-error: #{$error};
+  --color-info: #{$secondary-600};    // Using Teal
+
+  // Success variants
+  --color-success-light: #d4edda;
+  --color-success-dark: #155724;
+
+  // Warning variants
+  --color-warning-light: #fff3cd;
+  --color-warning-dark: #856404;
+
+  // Error variants
+  --color-error-light: #f8d7da;
+  --color-error-dark: #721c24;
+
+  // Info variants (Teal)
+  --color-info-light: #{$secondary-100};
+  --color-info-dark: #{$secondary-800};
+
+  // Interactive States
+  --color-hover: rgba(0, 0, 0, 0.05);
+  --color-active: rgba(0, 0, 0, 0.1);
+  --color-focus: #{$primary-500};
+  --color-disabled: #{$neutral-400};
+
+  // Shadows - Light theme
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-base: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -2px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+
+  // Navigation
+  --nav-bg: rgba(255, 255, 255, 0.95);    // White with transparency
+  --nav-border: rgba(0, 0, 0, 0.1);
+  --nav-text: #{$neutral-900};            // Dark text
+  --nav-text-hover: #{$primary-600};      // Darker Blue on hover
+
+  // Cards
+  --card-bg: white;                    // Pure white
+  --card-border: #{$neutral-200};
+  --card-shadow: var(--shadow-md);
+
+  // Forms
+  --input-bg: white;                   // Pure white
+  --input-border: #{$neutral-300};
+  --input-border-focus: #{$primary-500};  // Deep Blue
+  --input-text: #{$neutral-900};      // Dark text
+  --input-placeholder: #{$neutral-500};
+
+  // Code
+  --code-bg: #{$neutral-100};         // Light Gray
+  --code-text: #{$neutral-900};       // Dark text
+  --code-border: #{$neutral-200};
+}

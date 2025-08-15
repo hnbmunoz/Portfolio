@@ -1,0 +1,150 @@
+// ==========================================================================
+// Buttons
+// ==========================================================================
+
+.btn {
+  @include button-base;
+  @include focus-ring;
+  
+  // Default size
+  @include button-size($spacing-3, $spacing-6, $font-size-base);
+  
+  // Variants
+  &--primary {
+    @include button-variant(
+      var(--color-primary),
+      white,
+      var(--color-primary-hover),
+      white
+    );
+  }
+  
+  &--secondary {
+    @include button-variant(
+      transparent,
+      var(--color-primary),
+      var(--color-primary-light),
+      var(--color-primary-dark)
+    );
+    border: 1px solid var(--color-primary);
+  }
+  
+  &--accent {
+    @include button-variant(
+      var(--color-accent),
+      white,
+      var(--color-accent-hover),
+      white
+    );
+  }
+  
+  &--ghost {
+    @include button-variant(
+      transparent,
+      var(--text-primary),
+      var(--color-hover),
+      var(--text-primary)
+    );
+  }
+  
+  &--success {
+    @include button-variant(
+      var(--color-success),
+      white
+    );
+  }
+  
+  &--warning {
+    @include button-variant(
+      var(--color-warning),
+      white
+    );
+  }
+  
+  &--error {
+    @include button-variant(
+      var(--color-error),
+      white
+    );
+  }
+  
+  // Sizes
+  &--sm {
+    @include button-size($spacing-2, $spacing-4, $font-size-sm);
+  }
+  
+  &--lg {
+    @include button-size($spacing-4, $spacing-8, $font-size-lg);
+  }
+  
+  &--xl {
+    @include button-size($spacing-5, $spacing-10, $font-size-xl);
+  }
+  
+  // States
+  &--loading {
+    position: relative;
+    color: transparent !important;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1rem;
+      height: 1rem;
+      margin: -0.5rem 0 0 -0.5rem;
+      border: 2px solid transparent;
+      border-top-color: currentColor;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+    }
+  }
+  
+  &--full-width {
+    width: 100%;
+  }
+  
+  // Icon buttons
+  &--icon {
+    @include button-size($spacing-3, $spacing-3, $font-size-base);
+    
+    &.btn--sm {
+      @include button-size($spacing-2, $spacing-2, $font-size-sm);
+    }
+    
+    &.btn--lg {
+      @include button-size($spacing-4, $spacing-4, $font-size-lg);
+    }
+  }
+}
+
+// Button group
+.btn-group {
+  display: inline-flex;
+  
+  .btn {
+    border-radius: 0;
+    
+    &:first-child {
+      border-top-left-radius: $border-radius-md;
+      border-bottom-left-radius: $border-radius-md;
+    }
+    
+    &:last-child {
+      border-top-right-radius: $border-radius-md;
+      border-bottom-right-radius: $border-radius-md;
+    }
+    
+    &:not(:last-child) {
+      border-right: 1px solid var(--border-primary);
+    }
+  }
+}
+
+// Animations
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
