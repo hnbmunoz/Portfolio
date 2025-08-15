@@ -3,33 +3,33 @@
 // ==========================================================================
 
 // Abstracts - Variables, mixins, functions (no CSS output)
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
+@use 'abstracts/variables' as *;
+@use 'abstracts/mixins' as *;
 
 // Base - Reset, typography, and base styles
-@import 'base/reset';
-@import 'base/typography';
+@use 'base/reset';
+@use 'base/typography';
 
 // Themes - Light and dark theme variables
-@import 'themes/light';
-@import 'themes/dark';
+@use 'themes/light';
+@use 'themes/dark';
 
 // Components - Reusable component styles
-@import 'components/buttons';
-@import 'components/cards';
-@import 'components/forms';
-@import 'components/navigation';
+@use 'components/buttons';
+@use 'components/cards';
+@use 'components/forms';
+@use 'components/navigation';
 
 // Layout - Layout-specific styles
-@import 'layout/header';
-@import 'layout/footer';
-@import 'layout/grid';
+@use 'layout/header';
+@use 'layout/footer';
+@use 'layout/grid';
 
 // Pages - Page-specific styles
-@import 'pages/home';
+@use 'pages/home';
 
 // Utilities - Utility classes
-@import 'utilities/spacing';
-@import 'utilities/display';
-@import 'utilities/flexbox';
-@import 'utilities/colors';
+@use 'utilities/spacing';
+@use 'utilities/display';
+@use 'utilities/flexbox';
+@use 'utilities/colors';

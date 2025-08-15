@@ -2,6 +2,8 @@
 // Flexbox Utilities
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+
 // Flex direction
 .flex-row { flex-direction: row; }
 .flex-row-reverse { flex-direction: row-reverse; }

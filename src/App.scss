@@ -3,9 +3,9 @@
 // ==========================================================================
 
 // Import abstracts for variables and mixins
-@import './styles/abstracts/variables';
-@import './styles/abstracts/mixins';
-@import './styles/animations';
+@use './styles/abstracts/variables' as *;
+@use './styles/abstracts/mixins' as *;
+@use './styles/animations' as *;
 
 #root {
   min-height: 100vh;

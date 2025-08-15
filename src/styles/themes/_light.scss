@@ -2,6 +2,8 @@
 // Light Theme
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+
 :root,
 [data-theme="light"] {
   // Background Colors - Light Theme

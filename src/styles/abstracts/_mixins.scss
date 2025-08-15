@@ -2,6 +2,11 @@
 // Mixins
 // ==========================================================================
 
+// Import required modules for built-in functions
+@use 'sass:string';
+@use 'sass:meta';
+@use 'variables' as *;
+
 // Typography Mixins
 // ==========================================================================
 
@@ -72,14 +77,12 @@
   margin: 0 auto;
   padding: 0 $spacing-4;
 
-  & {
-    @media (min-width: $breakpoint-sm) {
-      padding: 0 $spacing-6;
-    }
+  @media (min-width: $breakpoint-sm) {
+    padding: 0 $spacing-6;
+  }
 
-    @media (min-width: $breakpoint-lg) {
-      padding: 0 $spacing-8;
-    }
+  @media (min-width: $breakpoint-lg) {
+    padding: 0 $spacing-8;
   }
 }
 
@@ -149,7 +152,7 @@
       background-color: $hover-bg;
     } @else {
       // Check if $bg-color is a CSS custom property
-      @if str-index(inspect($bg-color), 'var(') == 1 {
+      @if string.index(meta.inspect($bg-color), 'var(') == 1 {
         // For CSS custom properties, use a filter to darken
         background-color: $bg-color;
         filter: brightness(0.9);

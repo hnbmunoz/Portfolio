@@ -12,15 +12,17 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
   "dependencies": {
     "@vitejs/plugin-react": "^4.7.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1",
+    "typescript": "^5.9.2",
     "vite": "^6.3.5",
     "zustand": "^5.0.7"
   },
   "devDependencies": {
+    "@types/react": "^19.1.10",
+    "@types/react-dom": "^19.1.7",
     "sass": "^1.90.0",
     "sass-embedded": "^1.90.0"
   }

@@ -2,6 +2,8 @@
 // Display Utilities
 // ==========================================================================
 
+@use '../abstracts/mixins' as *;
+
 .d-none { display: none; }
 .d-block { display: block; }
 .d-inline { display: inline; }

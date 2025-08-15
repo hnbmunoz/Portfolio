@@ -2,6 +2,8 @@
 // Header Layout
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+
 .header {
   position: sticky;
   top: 0;

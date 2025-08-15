@@ -2,6 +2,8 @@
 // Dark Theme
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+
 [data-theme="dark"] {
   // Background Colors - True Dark Theme
   --bg-primary: #121212;              // True dark background

@@ -2,6 +2,8 @@
 // Home Page
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+
 .home {
   &__hero {
     padding: $spacing-20 0;

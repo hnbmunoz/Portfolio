@@ -2,6 +2,9 @@
 // Forms
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .form {
   &__group {
     margin-bottom: $spacing-4;

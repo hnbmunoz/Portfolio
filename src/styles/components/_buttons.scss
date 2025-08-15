@@ -2,6 +2,9 @@
 // Buttons
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .btn {
   @include button-base;
   @include focus-ring;

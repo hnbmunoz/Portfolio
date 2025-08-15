@@ -2,6 +2,9 @@
 // Cards
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .card {
   @include card-base;
   padding: $spacing-6;

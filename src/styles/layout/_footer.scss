@@ -2,6 +2,9 @@
 // Footer Layout
 // ==========================================================================
 
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
 .footer {
   margin-top: auto;
   background-color: var(--bg-secondary);
