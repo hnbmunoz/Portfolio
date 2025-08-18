@@ -5,7 +5,7 @@
 export type Theme = 'light' | 'dark';
 
 export const getStoredTheme = (): Theme => {
-  if (typeof window === 'undefined') return 'light';
+  if (typeof window === 'undefined') return 'dark';
   
   const stored = localStorage.getItem('theme') as Theme;
   if (stored && ['light', 'dark'].includes(stored)) {
@@ -17,7 +17,7 @@ export const getStoredTheme = (): Theme => {
     return 'dark';
   }
   
-  return 'light';
+  return 'dark';
 };
 
 export const setTheme = (theme: Theme): void => {

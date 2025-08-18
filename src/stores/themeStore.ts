@@ -22,7 +22,7 @@ const applyThemeToDOM = (theme: Theme) => {
 };
 
 const getSystemTheme = (): Theme => {
-  if (typeof window === 'undefined') return 'light';
+  if (typeof window === 'undefined') return 'dark';
   
   return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 };
@@ -30,7 +30,7 @@ const getSystemTheme = (): Theme => {
 export const useThemeStore = create<ThemeState>()(
   persist(
     (set, get) => ({
-      theme: 'light', // Default theme
+      theme: 'dark', // Default theme
       
       setTheme: (theme: Theme) => {
         applyThemeToDOM(theme);
@@ -79,7 +79,7 @@ export const useThemeInitialization = () => {
       // Only update if no theme is stored (user hasn't made a choice)
       const storedTheme = localStorage.getItem('theme-storage');
       if (!storedTheme) {
-        useThemeStore.getState().setTheme(e.matches ? 'dark' : 'light');
+        useThemeStore.getState().setTheme(e.matches ? 'dark' : 'dark');
       }
     };
     
