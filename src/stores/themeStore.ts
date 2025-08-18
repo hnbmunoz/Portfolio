@@ -58,7 +58,12 @@ export const useThemeStore = create<ThemeState>()(
       onRehydrateStorage: () => (state) => {
         // Apply theme to DOM after rehydration
         if (state) {
-          applyThemeToDOM(state.theme);
+          // Check if the persisted theme is valid, default to 'dark' if not
+          const validTheme = (state.theme === 'dark' || state.theme === 'light') ? state.theme : 'dark';
+          if (validTheme !== state.theme) {
+            state.theme = validTheme;
+          }
+          applyThemeToDOM(validTheme);
         }
       },
     }
