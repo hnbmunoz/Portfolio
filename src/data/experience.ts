@@ -6,7 +6,7 @@ export const experience: Experience[] = [
     company: "Lokion",
     location: "Memphis",
     position: "Software Developer",
-    startDate: "July 28",
+    startDate: "July 28, 2025",
     endDate: "Present",
     type: "Contractual",
     responsibilities: [
